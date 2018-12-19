@@ -120,7 +120,7 @@ Ein paar Apps:
 ```
 Filemananger:
 adb shell monkey --pct-syskeys 0 -p 'com.mediatek.filemanager' -v 500
-
+Einstellungen Android:
 adb shell monkey --pct-syskeys 0 -p 'com.android.settings' -v 500
 ```
 
@@ -130,4 +130,26 @@ Ich gehe davon aus, das das System folgendermaßen angesteuert wird:
 Es gibt ein Serielles Device unter /dev/ttyMT0
 Dieses wird mit einigen Kommandos gesteuert..
 
+18.  Ich habe versucht mit folgendem Tool eine CWM zu bauen:
+https://forum.hovatek.com/thread-21839.html
+
+Leider bootet das Gerät immer in die Stock-CWM
+
+
+20. Ich kann den Trebuchet Launcher installieren auf dem Gerät. Dies macht man wie folgt:
+Download von : https://www.apkmirror.com/apk/cyanogenmod/trebuchet-2/
+```
+adb install com.lineageport.trebuchet_8.1.0.16-8010016_minAPI21\(nodpi\)_apkmirror.com.apk
+adb shell monkey --pct-syskeys 0 -p 'com.android.settings' -v 500
+```
+19. Ich habe probiert CWM zum laufen gekriegt. Erstens muss man auf der System-Partition eine Datei löschen,
+da der Bootmanager sonst immer die Recovery mit einer Stock-Variante überschreibt. Der Sachverhalt ist hier beschrieben:
+https://privatstrand.dirkschmidtke.de/2016/07/25/root-und-custom-recovery-auf-mediatek-smartphones/
+
+20. Leider kriege ich keine der offizielen "Tools" zum bauen von CWM zum laufen. D.h. ich werde es wohl selbst kompilieren müssen.
+
+21. Ich habe nun eine Custom Recovery compiliert. Diese ist noch etwas unausgereift(falscher Modus) aber langt normalerweise.
+
+Anbei ein paar Anleitungen aus welchen ich das nötige Fachwissen entnommen habe:
+https://gist.github.com/zawzaww/5096677c990cb6ec5bcd722162d61372
 
