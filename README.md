@@ -13,3 +13,4 @@ Desweiteren sollte einem klar sein, das eine unberechtigte Software-Modifikation
 
 Die Anleitung ist nur für Profis geeignet. Es ist auf jeden Fall anzuraten das ein sehr IT-Affiner Mensch das ganze ausführt.
 
+Ihr findet die Anleitung unter dem Ordner "install"
