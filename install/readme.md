@@ -4,7 +4,7 @@
 # Hardware-Voraussetzungen
 1. Monsieur Cuisine Connect
 2. PC mit Windows oder Ubuntu
-3. USB A-Male zu USB-A Male Kabel
+3. USB A-Male zu USB-A Male Kabel oder Adapter + Verlängerungskabel USB
 ![menu](/informations/usb.jpg)
 
 4. Kleinen Torx-Schraubenzieher 
