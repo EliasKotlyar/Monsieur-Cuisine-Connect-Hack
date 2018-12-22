@@ -5,7 +5,7 @@
 1. Monsieur Cuisine Connect
 2. PC mit Windows oder Ubuntu
 3. USB A-Male zu USB-A Male Kabel
-![menu](/informations/usb.jpg){:height="100px" width="100px"}
+![menu](/informations/usb.jpg)
 
 4. Kleinen Torx-Schraubenzieher 
 
@@ -36,7 +36,7 @@ https://www.androidpit.de/adb-treiber-android-windows
 
 3. Verbinde den PC mit dem Gerät mithilfe des USB-Kabels. *Benützt nur den rechten Port mit der Aufschrift "Android USB"*. Eine Verbindung mit dem Linken kann euer Gerät zerschießen.
 
-![USB PORTs](/informations/usbports.jpg){:height="100px" width="100px"}
+![USB PORTs](/informations/usbports.jpg)
 
 
 4. Start SP-Flash-Tools. Benütze die Scatter-Datei l706_dfbh_v_695scatter.txt um das Tool zu initialisieren.
