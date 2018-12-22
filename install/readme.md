@@ -90,6 +90,7 @@ adb shell am start -a android.intent.action.MAIN -c android.intent.category.HOME
 
 ```
 Danach kann man per Einstellungen den Trebuchet Launcher als Default-Launcher festlegen.
+
 17. Man lädt nun die Google Apps runter: https://opengapps.org/
 
 ```
@@ -107,4 +108,4 @@ adb reboot recovery
 und flasht die ZIP-Datei. Zusätzlich kann man das Gerät auch mit zb. SuperSU rooten(falls benötigt)
 
 
-18. Neue Wallpaper aus dem Google Store holen und sein Gerät damit ausrüsten
+18. Neue Wallpaper aus dem Google Store holen und sein Gerät damit ausrüsten. Ich empfehle Walloid
