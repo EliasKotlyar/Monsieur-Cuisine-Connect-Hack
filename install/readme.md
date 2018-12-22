@@ -32,7 +32,10 @@ https://www.androidpit.de/adb-treiber-android-windows
 
 2. Schraube die Wartungsklappe auf. Dafür wird der Torx-Schraubenzieher benötigt.
 
-3. Verbinde den PC mit dem Gerät mithilfe des USB-Kabels
+3. Verbinde den PC mit dem Gerät mithilfe des USB-Kabels. *Benützt nur den rechten Port mit der Aufschrift "Android USB"*. Eine Verbindung mit dem Linken kann euer Gerät zerschießen.
+
+![USB PORTs](/informations/usbports.jpg | width=100)
+
 
 4. Start SP-Flash-Tools. Benütze die Scatter-Datei l706_dfbh_v_695scatter.txt um das Tool zu initialisieren.
 
@@ -48,7 +51,7 @@ Lenght:
 ```
 Lese diesen Teil des Flash-Speichers als "boot.img" ein. Desweiteren könntest du auch die Recovery Partition backuppen.
 
-***Achtung, diesen Schritt nicht überpringen!! Das Backup wird an einer anderen Stelle benötigt.*** 
+***Achtung, diesen Schritt nicht überpringen!! Das Backup der Boot-Partition wird an einer anderen Stelle benötigt.*** 
 
 6. Beschreibe mithilfe von SP-FlashTools die Partition "boot" mit der Recovery-Datei aus "hacks/recovery.img"
 
@@ -107,5 +110,6 @@ adb reboot recovery
 ```
 und flasht die ZIP-Datei. Zusätzlich kann man das Gerät auch mit zb. SuperSU rooten(falls benötigt)
 
+**Achtung, das Gerät benimmt sich beim nächsten Start etwas komisch. EInfach paarmal auf den Bildschirm tippen, und es bootet neu**
 
 18. Neue Wallpaper aus dem Google Store holen und sein Gerät damit ausrüsten. Ich empfehle Walloid
