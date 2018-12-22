@@ -57,21 +57,23 @@ Lese diesen Teil des Flash-Speichers als "boot.img" ein. Desweiteren könntest d
 
 6. Beschreibe mithilfe von SP-FlashTools die Partition "boot" mit der Recovery-Datei aus "hacks/recovery.img"
 
-7. Starte den MC neu, es sollte in der TWRP-Recovery automatisch in der Recovery landen. Falls nicht - nochmals flashen.
+7. Starte den MC neu, es sollte automatisch in der TWRP-Recovery landen. Falls nicht, ist irgwas beim flashen schiefgegangen.
 
 8. Starte die ADB-Shell. Führe danach folgende Kommandos aus:
 ```
+# Mounten der System Partition
+mount /system/
 # Erlaubt ADB
 echo "persist.service.adb.enable=1" >> /system/build.prop                                                 
 echo "persist.service.debuggable=1" >> /system/build.prop
 echo "persist.sys.usb.config=mtp,adb" >> /system/build.prop
-# Enable Android-Buttons:
+# Zeigt die  Android-Buttons wieder an:
 echo "qemu.hw.mainkeys=0" >> /system/build.prop
 # Disable Recovery Check(https://privatstrand.dirkschmidtke.de/2016/07/25/root-und-custom-recovery-auf-mediatek-smartphones/)
 rm /system/recovery-from-boot.p
 ```
 
-9. Pushe per ADB  deine originale boot-partition aus Schritt 5 auf das Gerät.
+9. Pushe per ADB deine originale boot-partition aus Schritt 5 auf das Gerät.
 Desweiteren lädst du wieder einmal die "hacks/recovery.img" Datei auf dein Gerät:
 ```
 adb push bootimg.bin /sdcard/
@@ -89,12 +91,13 @@ https://www.apkmirror.com/apk/cyanogenmod/trebuchet-2/trebuchet-2-8-1-0-16-relea
 ```
 adb install com.lineageport.trebuchet_8.1.0.16-8010016_minAPI21\(nodpi\)_apkmirror.com.apk
 ```
-Sobald der Launcher installiert ist, muss man diesen noch aktivieren. Dazu führt man folgenden Befehl aus:
+Sobald der Launcher installiert ist, muss man diesen noch starten. Dazu führt man folgenden Befehl aus:
 ```
 adb shell am start -a android.intent.action.MAIN -c android.intent.category.HOME com.lineageport.trebuchet
 
 ```
 Danach kann man per Einstellungen den Trebuchet Launcher als Default-Launcher festlegen.
+*** Achtung: Diese Bedienungselemente sind nur Wallpaper. Nicht verwirren lassen, die Android Buttons sind wie gehabt unten ***
 
 17. Man lädt nun die Google Apps runter: https://opengapps.org/
 
@@ -104,7 +107,7 @@ Android Version: 6.0
 Variant: pico
 ```
 
-Andere Varianten(micro,full) funktionieren nicht - es gibt dann nur noch Abstürze etc.
+Andere Varianten(micro,full) funktionieren nicht - es gibt dann nur noch Abstürze / Reboot Loops.
 
 Man bootet in die Recovery mithilfe von 
 ```
@@ -112,6 +115,6 @@ adb reboot recovery
 ```
 und flasht die ZIP-Datei. Zusätzlich kann man das Gerät auch mit zb. SuperSU rooten(falls benötigt)
 
-**Achtung, das Gerät benimmt sich beim nächsten Start etwas komisch. EInfach paarmal auf den Bildschirm tippen, und es bootet neu**
+**Achtung, das Gerät benimmt sich beim nächsten Start etwas komisch. EInfach paarmal auf den Bildschirm tippen, und es bootet neu und alles ist wieder in Ordnung**
 
-18. Neue Wallpaper aus dem Google Store holen und sein Gerät damit ausrüsten. Ich empfehle Walloid
+18. Neue Wallpaper aus dem Google Store holen und sein Gerät damit ausrüsten. Ich empfehle die App "Walloid"
