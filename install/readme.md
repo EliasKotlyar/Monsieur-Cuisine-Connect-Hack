@@ -7,31 +7,36 @@
 3. USB A-Male zu USB-A Male Kabel
 4. Kleinen Torx-Schraubenzieher 
 
+## Software Voraussetzungen:
+
+### Linux:
+adb
+
+SP-Flash-Tools
+
+Deaktiviere das Packet "modemmanager"(apt-get remove modemmanager), damit SP-Flash-Tools korrekt funktioniert.
+
+### Windows:
+Installiere SP-Flash-Tools mit folgender Anleitung(https://spflashtool.com/):
+
+https://www.chinamobilemag.de/tutorials/sp-flash-tool-universal-tutorial.html
+
+Installiere ADB mit folgender Anleitung:
+
+https://www.androidpit.de/adb-treiber-android-windows
+
 
 # Installation:
 
 1. Schalte das Gerät ab
 
-2. Schraube die Wartungsklappe auf mithilfe des 10ner-Torx
+2. Schraube die Wartungsklappe auf. Dafür wird der Torx-Schraubenzieher benötigt.
 
 3. Verbinde den PC mit dem Gerät mithilfe des USB-Kabels
 
-4. Lade die Software SP-Flash Tool von https://spflashtool.com/ herunter
+4. Start SP-Flash-Tools. Benütze die Scatter-Datei l706_dfbh_v_695scatter.txt um das Tool zu initialisieren.
 
-5. Bei Windows:
-
-Installiere die Software mit folgender Anleitung:
-
-https://www.chinamobilemag.de/tutorials/sp-flash-tool-universal-tutorial.html
-
-
-Bei Ubuntu:
-
-Deaktiviere das Packet "modemmanager"(apt-get remove modemmanager)
-
-6. Benütze die Scatter-Datei l706_dfbh_v_695scatter.txt um das Tool zu initialisieren.
-
-7. Fertige nun Backups jeglicher Partionen an. Dazu hilft folgende Anleitung:
+5. Fertige nun Backups jeglicher Partionen an. Dazu hilft folgende Anleitung:
 https://www.android-hilfe.de/forum/anleitungen-fuer-mediatek-geraete.2400/anleitung-backup-readback-per-sp-flash-tool.746503.html
 
 Das wichtigste ist ein Backup deiner "boot"-Partition. Dazu stellt man folgendes ein:
@@ -41,16 +46,15 @@ Start-Address:
 Lenght:
 0x0000000001000000
 ```
-Lese diesen Teil des Flash-Speichers als "boot.img" ein
+Lese diesen Teil des Flash-Speichers als "boot.img" ein. Desweiteren könntest du auch die Recovery Partition backuppen.
 
-8. Beschreibe mithilfe von SP-FlashTools die Partition "boot" mit der Recovery-Datei aus "hacks/recovery.img"
+***Achtung, diesen Schritt nicht überpringen!! Das Backup wird an einer anderen Stelle benötigt.*** 
 
-9. Boote dein Gerät, es sollte in der TWRP-Recovery landen.
+6. Beschreibe mithilfe von SP-FlashTools die Partition "boot" mit der Recovery-Datei aus "hacks/recovery.img"
 
-10. Installiere die ADB-Treiber auf deinen PC. Du solltest eine ADB-Shell sehen sobald du
-auf das Gerät draufgehst.
+7. Starte den MC neu, es sollte in der TWRP-Recovery automatisch in der Recovery landen. Falls nicht - nochmals flashen.
 
-11. Gehe per ADB dadrauf und führe folgende Kommandos aus:
+8. Starte die ADB-Shell. Führe danach folgende Kommandos aus:
 ```
 # Erlaubt ADB
 echo "persist.service.adb.enable=1" >> /system/build.prop                                                 
@@ -62,12 +66,15 @@ echo "qemu.hw.mainkeys=0" >> /system/build.prop
 rm /system/recovery-from-boot.p
 ```
 
-12. Pushe per ADB die Recovery sowie deine originale boot-partition aus Schritt 7 auf das Gerät
-
+9. Pushe per ADB  deine originale boot-partition aus Schritt 5 auf das Gerät.
+Desweiteren lädst du wieder einmal die "hacks/recovery.img" Datei auf dein Gerät:
+```
 adb push bootimg.bin /sdcard/
 adb push recovery.bin /sdcard
+```
 
-13. Flashe mit TWRP die beiden Dateien entsprechend als Image. Damit wird das originale Bootimage wiederhergestellt sowie die Recovery in die zugehörige Recovery Partition geflashed.
+13. Flashe mit TWRP die beiden Dateien entsprechend.
+Deine originale boot.img kommt in die boot-partition, die "hacks/recovery"-Datei in die recovery partition
 
 15. Starte das Gerät neu. Es sollte die originale MC-Firmware starten.  Jetzt kannst du auch im laufenden Betrieb per ADB das Gerät zugreifen.
 
@@ -82,7 +89,7 @@ Sobald der Launcher installiert ist, muss man diesen noch aktivieren. Dazu führ
 adb shell am start -a android.intent.action.MAIN -c android.intent.category.HOME com.lineageport.trebuchet
 
 ```
-
+Danach kann man per Einstellungen den Trebuchet Launcher als Default-Launcher festlegen.
 17. Man lädt nun die Google Apps runter: https://opengapps.org/
 
 ```
@@ -91,7 +98,7 @@ Android Version: 6.0
 Variant: pico
 ```
 
-Andere Varianten funktionieren nicht - es gibt dann Abstürze etc.
+Andere Varianten(micro,full) funktionieren nicht - es gibt dann nur noch Abstürze etc.
 
 Man bootet in die Recovery mithilfe von 
 ```
@@ -100,3 +107,4 @@ adb reboot recovery
 und flasht die ZIP-Datei. Zusätzlich kann man das Gerät auch mit zb. SuperSU rooten(falls benötigt)
 
 
+18. Neue Wallpaper aus dem Google Store holen und sein Gerät damit ausrüsten
