@@ -118,3 +118,14 @@ und flasht die ZIP-Datei. Zusätzlich kann man das Gerät auch mit zb. SuperSU r
 **Achtung, das Gerät benimmt sich beim nächsten Start etwas komisch. EInfach paarmal auf den Bildschirm tippen, und es bootet neu und alles ist wieder in Ordnung**
 
 18. Neue Wallpaper aus dem Google Store holen und sein Gerät damit ausrüsten. Ich empfehle die App "Walloid"
+
+### Unroot / Zurücksetzen auf originale Firmware
+
+Flashe einfach das Backup zurück. Es reicht wenn man folgende Partitionen flasht:
+
+```
+boot
+system
+recovery
+```
+
