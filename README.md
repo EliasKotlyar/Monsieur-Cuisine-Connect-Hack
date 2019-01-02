@@ -13,4 +13,11 @@ Desweiteren sollte einem klar sein, das eine unberechtigte Software-Modifikation
 
 Die Anleitung ist nur für Profis geeignet. Es ist auf jeden Fall anzuraten das ein sehr IT-Affiner Mensch das ganze ausführt.
 
-Ihr findet die Anleitung unter dem Ordner "install"
+[Anleitung Deutsch](/install_de/readme.md)
+
+## Instructions
+
+You can find the step by step tutorial here:
+
+[Instructions EN](/install_en/readme.md)
+
