@@ -119,6 +119,8 @@ und flasht die ZIP-Datei. Zusätzlich kann man das Gerät auch mit zb. SuperSU r
 
 18. Neue Wallpaper aus dem Google Store holen und sein Gerät damit ausrüsten. Ich empfehle die App "Walloid"
 
+19. Die MC App ist nach dem restart noch verfügbar und kann ohne Probleme gestartet werden. Um die Applikation zu verlassen geht auf **"Rezepte"** und drückt auf das **Suche** Symbol. Jetzt könnt ihr den Home-Button drücken und seid zurück im Launcher. Dies wird allerdings dazu führen, dass die LEDs im Ring leuchten oder blinken.
+
 ### Unroot / Zurücksetzen auf originale Firmware
 
 Flashe einfach das Backup zurück. Es reicht wenn man folgende Partitionen flasht:
